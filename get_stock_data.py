@@ -43,7 +43,10 @@ class Downloader(object):
             df_code = bs.query_history_k_data_plus(row["code"], self.fields,
                                                    start_date=self.date_start,
                                                    end_date=self.date_end).get_data()
-            df_code.to_csv(f'{self.output_dir}/{row["code"]}.{row["code_name"]}.csv', index=False)
+            try:
+                df_code.to_csv(f'{self.output_dir}/{row["code"]}.{row["code_name"]}.csv', index=False)
+            except e:
+                pass
         self.exit()
 
 
