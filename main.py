@@ -24,7 +24,7 @@ def stock_trade(stock_file):
     env = DummyVecEnv([lambda: StockTradingEnv(df)])
 
     model = PPO2(MlpPolicy, env, verbose=0, tensorboard_log='./log')
-    model.learn(total_timesteps=int(1e4))
+    model.learn(total_timesteps=int(1e6))
 
     df_test = pd.read_csv(stock_file.replace('train', 'test'))
 
