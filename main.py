@@ -1,9 +1,9 @@
 import os
 import pickle
 import pandas as pd
-from stable_baselines.common.policies import MlpPolicy
-from stable_baselines.common.vec_env import DummyVecEnv
-from stable_baselines import PPO2
+#from stable_baselines3.common.policies import MlpPolicy
+from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3 import PPO
 from rlenv.StockTradingEnv0 import StockTradingEnv
 
 import numpy as np
